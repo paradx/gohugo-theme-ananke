@@ -5,7 +5,7 @@ other = "Mehr"
 other = "Alle {{.Title }}"
 
 [recentTitle]
-other = "Neuste {{.Title }}"
+other = "Neueste {{.Title }}"
 
 [readMore]
 other = "weiterlesen"
@@ -44,3 +44,6 @@ other = "{{ .Count }} Wörter"
 
 [pageTitle]
 other = "{{ .Name }} Seite"
+
+[By]
+other= "Von"
