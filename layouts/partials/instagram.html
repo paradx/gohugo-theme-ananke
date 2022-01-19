@@ -1,8 +1,8 @@
 <div class="pa3 pa4-ns w-100 w-70-ns center">
-<h1 class="flex-none"> Neustes von Instagram </h1>
-{{ $dataJ := getJSON "https://profilepageimages.usecue.com/images/dojosailing/images.json" }}
-<ul id="instafeed">
-  {{ range first 10 $dataJ }}
+  {{with .Site.Params.instagramfeedurl}}<h1 class="flex-none"> Neustes von Instagram </h1>
+  {{ $dataJ := getJSON $.Site.Params.instagramfeedurl }}
+  <ul id="instafeed">
+    {{ range first 10 $dataJ }}
     {{ $media_type := .media_type | lower }}
     {{ $image_small := .image_small }}
     {{ $permalink := .permalink }}
@@ -12,6 +12,7 @@
         <img class="{{ $media_type }}" src="{{ $image_small }}" {{ with $caption }}alt="{{ . }}"{{ else }}alt=""{{ end }}>
       </a>
     </li>
-  {{ end }}
-</ul>
+    {{ end }}
+  </ul>
+  {{end}}
 </div>
