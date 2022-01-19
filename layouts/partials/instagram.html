@@ -1,6 +1,6 @@
 <div class="pa3 pa4-ns w-100 w-70-ns center">
 <h1 class="flex-none"> Neustes von Instagram </h1>
-{{ $dataJ := getJSON "https://profilepageimages.usecue.com/images/dojosailing/images.json" }}
+{{ $dataJ := getJSON  $.Site.Params.instagramfeedurl }}
 <ul id="instafeed">
   {{ range first 10 $dataJ }}
     {{ $media_type := .media_type | lower }}
